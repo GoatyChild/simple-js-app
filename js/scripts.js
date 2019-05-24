@@ -1,13 +1,22 @@
-alert('You clicked the button!')
+var repository = [bulbasaur, charmander, squirtle]
 
-var simpleAddition = 2 + 2;
-document.write(simpleAddition);
+var bulbasaur = {
+    
+    name: bulbasaur,
+    height: 7,
+    type: 'grass'
+}
 
-var size = 100;
-var doubleSize = size * 2;
-document.write(doubleSize);
+var charmander = {
+    
+    name: charmander,
+    height: 10,
+    type: 'fire'
+}
 
-var size = 100;
-var doubleSize = size * 2;
-var minSize = (doubleSize * 2) - (size / 2);
-document.write(minSize);
+var squirtle = {
+    
+    name: squirtle,
+    height: 11,
+    type: 'water'
+}
