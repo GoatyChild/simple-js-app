@@ -40,10 +40,16 @@
 
     }
 
+    function loopBlockFunction(currentPokemon){
+        
+        console.log(currentPokemon);
+        document.write(currentPokemon);
+    }
+
+    pokemonRepository.forEach(loopBlockFunction);
+
 	
-
-
-
+   
     
 
     
