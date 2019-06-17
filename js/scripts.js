@@ -1,33 +1,41 @@
-    var bulbasaur = {
+var bulbasaur = {
 
-    name: 'bulbasaur',
-    height: 7,
-    type: 'grass'
+name: 'bulbasaur',
+height: 2,
+type: 'grass'
 
-    }
+}
 
-    var charmander = {
+var charmander = {
 
-    name: 'charmander',
-    height: 10,
-    type: 'fire'
+name: 'charmander',
+height: 10,
+type: 'fire'
 
-    }
+}
 
-    var squirtle = {
+var squirtle = {
 
-    name: 'squirtle',
-    height: 11,
-    type: 'water'
+name: 'squirtle',
+height: 11,
+type: 'water'
 
-    }
+}
 
-    var pokemonRepository = [bulbasaur, charmander, squirtle]
+var pokemonRepository = [bulbasaur, charmander, squirtle]
 
-    pokemonRepository.forEach(function(currentPokemon){
+pokemonRepository.forEach(function(currentPokemon){
 
-      console.log(currentPokemon);
-      document.write('<p>' + ': ' + currentPokemon + '</p>');
-      
+  Object.keys(currentPokemon).forEach(function(property){
 
-    });
+      console.log(currentPokemon[property]);
+      document.write('<p>' + currentPokemon[property] + '</p>');
+      if (currentPokemon[property] >= 3) {
+
+          document.write('<strong>' + '(Wow that is big!)' + '</strong>');
+
+      }
+
+  });
+
+});
