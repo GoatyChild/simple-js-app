@@ -1,7 +1,7 @@
 var bulbasaur = {
 
 name: 'bulbasaur',
-height: 2,
+height: 7,
 type: 'grass'
 
 }
@@ -22,20 +22,38 @@ type: 'water'
 
 }
 
-var pokemonRepository = [bulbasaur, charmander, squirtle]
+var pikachu = {
+
+name: 'pikachu',
+height: 3,
+type: 'electric'
+
+}
+
+var pokemonRepository = (function () {
+  var repository = [];
+
+  return {
+    add: function(pokemon) {
+      repository.push(pokemon);
+    },
+    getAll: function() {
+      return repository;
+    }
+  };
+})();
+
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: 'Bulbasaur' });
+console.log(pokemonRepository.getAll());
+
+var pokemonRepository = [bulbasaur, charmander, squirtle, pikachu];
 
 pokemonRepository.forEach(function(currentPokemon){
-
-  Object.keys(currentPokemon).forEach(function(property){
-
-      console.log(currentPokemon[property]);
-      document.write('<p>' + currentPokemon[property] + '</p>');
-      if (currentPokemon[property] >= 3) {
-
-          document.write('<strong>' + '(Wow that is big!)' + '</strong>');
-
-      }
-
-  });
-
+Object.keys(currentPokemon).forEach(function(property){
+document.write('<br>' + '<b>' + property + '</b>' + ': ' + currentPokemon[property] + '</br>');
+if (currentPokemon[property] >=2 ) {
+      document.write('<br>' + '<em>' + '(Wow that is big!)' + '</em>' + '</br>');
+  }
+    });
 });
