@@ -31,6 +31,7 @@ type: 'electric'
 }
 
 var pokemonRepository = (function () {
+
   var repository = [];
 
   return {
@@ -43,17 +44,20 @@ var pokemonRepository = (function () {
   };
 })();
 
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Bulbasaur' });
-console.log(pokemonRepository.getAll());
+pokemonRepository.add(bulbasaur);
+pokemonRepository.add(charmander);
+pokemonRepository.add(squirtle);
+pokemonRepository.add(pikachu);
 
-var pokemonRepository = [bulbasaur, charmander, squirtle, pikachu];
+pokemonRepository.getAll().forEach(function(currentPokemon){
 
-pokemonRepository.forEach(function(currentPokemon){
-Object.keys(currentPokemon).forEach(function(property){
-document.write('<br>' + '<b>' + property + '</b>' + ': ' + currentPokemon[property] + '</br>');
-if (currentPokemon[property] >=2 ) {
-      document.write('<br>' + '<em>' + '(Wow that is big!)' + '</em>' + '</br>');
-  }
+    Object.keys(currentPokemon).forEach(function(property){
+
+        document.write('<br>' + '<b>' + property + '</b>' + ': ' + currentPokemon[property] + '</br>');
+        if (currentPokemon[property] >=2 ) {
+              document.write('<br>' + '<em>' + '(Wow that is big!)' + '</em>' + '</br>');
+          }
+
     });
+
 });
